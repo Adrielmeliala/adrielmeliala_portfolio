@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adriel Meliala | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: { extend: {
+                fontFamily: { sans: ['Poppins', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+                colors: { brand: { dark: '#0a192f', purple: '#1e3a8a', light: '#93c5fd', accent: '#3b82f6' } }
+            } }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .wrap { @apply mx-auto w-full max-w-6xl px-6; }
+            .sec { @apply scroll-mt-24 border-t border-white/10 py-24; }
+            .h2 { @apply mb-3 text-3xl font-bold text-white md:text-4xl; }
+            .lead { @apply mb-12 max-w-2xl text-gray-400; }
+            .card { @apply rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:border-brand-accent/50 md:p-8; }
+            .chip { @apply inline-block rounded-md bg-brand-accent/10 px-2.5 py-1 text-xs font-medium text-brand-light; }
+            .btn { @apply inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition; }
+            .lbl { @apply mb-1 text-sm font-semibold text-white; }
+            .txt { @apply text-sm leading-relaxed text-gray-400; }
+            .bar { @apply flex w-full items-center gap-4 rounded-xl border border-white/10 bg-white/[0.04] px-5 py-3.5 text-left transition hover:border-brand-accent/60 hover:bg-brand-accent/10; }
+            .bar-ic { @apply grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-brand-accent/15 text-lg text-brand-light; }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-brand-dark font-sans text-gray-300 antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Navbar -->
+    <header class="fixed inset-x-0 top-4 z-50 px-4">
+        <div class="mx-auto max-w-4xl">
+            <div class="flex h-14 items-center justify-between rounded-full border border-white/15 bg-white/10 pl-6 pr-2 shadow-lg shadow-black/30 backdrop-blur-xl">
+                <a href="#home" class="text-base font-bold tracking-tight text-white">Adriel <span class="text-brand-accent">Meliala</span></a>
+                <nav class="hidden items-center gap-1 text-sm font-medium md:flex">
+                    <a href="#about" class="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white">About Me</a>
+                    <a href="#skills" class="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white">Skills</a>
+                    <a href="#projects" class="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white">Projects</a>
+                    <a href="#experience" class="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white">Experience</a>
+                    <a href="#certificates" class="rounded-full px-4 py-2 transition hover:bg-white/10 hover:text-white">Certificates</a>
+                    <a href="#contact" class="ml-1 rounded-full bg-brand-accent px-5 py-2 text-white transition hover:bg-brand-light hover:text-brand-dark">Contact</a>
+                </nav>
+                <button class="grid h-10 w-10 place-items-center rounded-full text-white transition hover:bg-white/10 md:hidden" aria-label="Menu" onclick="document.getElementById('mnav').classList.toggle('hidden')"><i class="fas fa-bars"></i></button>
+            </div>
+            <nav id="mnav" class="mt-2 hidden rounded-3xl border border-white/15 bg-brand-dark/90 p-3 text-sm shadow-lg shadow-black/30 backdrop-blur-xl md:hidden" onclick="this.classList.add('hidden')">
+                <a href="#about" class="block rounded-2xl px-4 py-3 hover:bg-white/10">About Me</a>
+                <a href="#skills" class="block rounded-2xl px-4 py-3 hover:bg-white/10">Skills</a>
+                <a href="#projects" class="block rounded-2xl px-4 py-3 hover:bg-white/10">Projects</a>
+                <a href="#experience" class="block rounded-2xl px-4 py-3 hover:bg-white/10">Experience</a>
+                <a href="#certificates" class="block rounded-2xl px-4 py-3 hover:bg-white/10">Certificates</a>
+                <a href="#contact" class="block rounded-2xl px-4 py-3 hover:bg-white/10">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="flex min-h-screen items-center bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.18),transparent_55%)] pt-20">
+        <div class="wrap py-20">
+            <span class="inline-flex items-center gap-2 rounded-full border border-brand-accent/40 bg-brand-accent/10 px-4 py-1.5 text-sm font-medium text-brand-light">
+                <span class="h-2 w-2 rounded-full bg-green-400"></span> Available for Intern
+            </span>
+            <h1 class="mt-6 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">Hi!, I'm Adriel Hagai Brenta Sembiring Meliala</h1>
+            <h2 class="mt-4 text-xl font-medium text-brand-accent md:text-2xl">Computer Science / Cyber Security</h2>
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-gray-400">Welcome to my portfolio, where curiosity meets problem-solving. Explore my projects in cybersecurity, AI, and web development, and get to know the person behind the work.</p>
+            <div class="mt-9 flex flex-wrap gap-3">
+                <a href="#projects" class="btn bg-brand-accent text-white shadow-lg shadow-brand-accent/20 hover:bg-brand-purple">View Projects <i class="fas fa-arrow-down text-xs"></i></a>
+                <a href="#contact" class="btn border border-white/20 text-white hover:border-brand-accent hover:bg-white/5">Contact Me</a>
+                <a href="files/CV_ADRIELMELIALA2026.pdf" target="_blank" download="CV_Adriel_Meliala.pdf" class="btn border border-white/20 text-white hover:border-brand-accent hover:bg-white/5"><i class="fas fa-download text-xs"></i> Download CV</a>
+            </div>
+            <ul class="mt-14 flex flex-wrap gap-3">
+                <li class="chip !px-3.5 !py-1.5 !text-sm">BINUS University</li>
+                <li class="chip !px-3.5 !py-1.5 !text-sm">GPA 3.75 / 4.00</li>
+                <li class="chip !px-3.5 !py-1.5 !text-sm">Manager GDGoC BINUS Malang</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="sec">
+        <div class="wrap">
+            <div class="grid items-center gap-12 md:grid-cols-[320px_1fr]">
+                <div class="mx-auto aspect-square w-full max-w-xs overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-1.5">
+                    <div class="flex h-full w-full items-center justify-center overflow-hidden rounded-[1.25rem] bg-brand-dark">
+                        <img src="images/adriel_picture.jpg" alt="Foto Adriel Meliala" class="h-full w-full object-cover object-top">
+                    </div>
+                </div>
+                <div>
+                    <h2 class="h2">About Me</h2>
+                    <p class="mt-5 max-w-prose text-lg leading-relaxed text-gray-300">Hi, I’m Adriel Hagai Brenta Sembiring Meliala. Ever since I was a kid, I’ve been drawn to puzzles, riddles, and brain teasers. I find the process of solving them fascinating, and there’s a special kind of satisfaction in finally cracking a problem. That curiosity led me to the world of tech, where technology keeps evolving to solve people’s problems and meet their needs.</p>
+                    <p class="mt-5 max-w    -prose text-lg leading-relaxed text-gray-300">I’m currently a Computer Science student at Bina Nusantara University (BINUS), majoring in Cyber Security. I’ve found that cybersecurity fits my interests well: it’s like solving a puzzle, and at times I also get to play the role of a system’s protector. With strong teamwork, leadership, collaboration, and adaptability, I’m confident I can overcome every challenge that comes my way.</p>
+                    <p class="mt-4 max-w-prose rounded-xl border-l-4 border-brand-accent bg-brand-accent/10 px-5 py-4 text-base text-brand-light">My goal is to become a security consultant and eventually lead an IT division.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="sec bg-black/20">
+        <div class="wrap">
+            <h2 class="h2">Education</h2>
+            <p class="lead">Academic background and relevant coursework.</p>
+            <div class="grid gap-6 md:grid-cols-2">
+                <article class="card">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <p class="text-sm font-medium text-brand-accent">2024 - Present</p>
+                            <h3 class="mt-1 text-xl font-bold text-white">Bina Nusantara University (BINUS) Malang</h3>
+                        </div>
+                        <img src="images/logobinus.png" alt="Logo BINUS University" class="h-16 w-16 shrink-0 rounded-xl bg-white object-contain p-1.5">
+                    </div>
+                    <p class="mt-1 text-gray-400">Major: Computer Science - Cyber Security</p>
+                    <p class="mt-5 inline-flex items-baseline gap-3 rounded-xl bg-brand-accent/10 px-4 py-2"><span class="text-sm text-gray-400">GPA</span><span class="text-2xl font-bold text-white">3.75 / 4.00</span></p>
+                    <h4 class="lbl mt-6">Relevant Coursework</h4>
+                    <ul class="txt list-inside list-disc space-y-1">
+                        <li>Software Security</li>
+                        <li>Mobile Penetration Testing</li>
+                        <li>Network &amp; Server Administration</li>
+                        <li>Software Engineering</li>
+                        <li>Network Penetration Testing</li>
+                        <li>Reverse Engineering and Binary Exploitation</li>
+                        <li>Secure Programming</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <div class="flex items-start justify-between gap-4">
+                        <div>
+                            <p class="text-sm font-medium text-brand-accent">2021 - 2024</p>
+                            <h3 class="mt-1 text-xl font-bold text-white">SMAK Kolese Santo Yusup Malang</h3>
+                        </div>
+                        <img src="images/logokosayu.png" alt="Logo SMAK Kolese Santo Yusup Malang" class="h-16 w-16 shrink-0 rounded-xl bg-white object-contain p-1.5">
+                    </div>
+                    <p class="mt-1 text-gray-400">Major: Science Major</p>
+                    <p class="txt mt-5">Enrolled in Science Major Class from 2021-2024. Graduated year 2024.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="sec">
+        <div class="wrap">
+            <h2 class="h2">What I Do Best</h2>
+            <p class="lead">Technical skills and tools I work with.</p>
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <article class="card"><i class="fas fa-mobile-alt mb-4 text-2xl text-brand-accent"></i><h3 class="mb-2 text-lg font-semibold text-white">Mobile Security &amp; Pentesting</h3><p class="txt">Android penetration testing, APK reverse engineering (JADX-GUI, APKTool), Frida, Burp Suite (Basic), SQLite</p></article>
+                <article class="card"><i class="fas fa-code mb-4 text-2xl text-brand-accent"></i><h3 class="mb-2 text-lg font-semibold text-white">Programming</h3><p class="txt">C, C++, Python, PHP, Javascript, Java</p></article>
+                <article class="card"><i class="fas fa-tools mb-4 text-2xl text-brand-accent"></i><h3 class="mb-2 text-lg font-semibold text-white">Dev Tools</h3><p class="txt">Git, Docker, Android Studio, Visual Studio Code, MySQL</p></article>
+                <article class="card"><i class="fas fa-network-wired mb-4 text-2xl text-brand-accent"></i><h3 class="mb-2 text-lg font-semibold text-white">Networking &amp; Systems</h3><p class="txt">Computer networks, server and network administration, Windows, macOS</p></article>
+                <article class="card lg:col-span-2"><i class="fas fa-users mb-4 text-2xl text-brand-accent"></i><h3 class="mb-2 text-lg font-semibold text-white">Soft Skills</h3><p class="txt">Teamwork, communication, adaptability, problem-solving, critical thinking, leadership</p></article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="sec bg-black/20">
+        <div class="wrap">
+            <h2 class="h2">Featured Projects</h2>
+            <p class="lead">Selected work in security, AI, web development, and UI/UX.</p>
+            <div class="grid gap-6 lg:grid-cols-2">
+                <article class="card flex flex-col">
+                    <p class="text-sm text-brand-accent">Android Security | 2026 | Team project</p>
+                    <h3 class="mt-1 text-xl font-bold text-white">Travel Agent Platform - Penetration Testing Assessment</h3>
+                    <h4 class="lbl mt-5">Problem</h4>
+                    <p class="txt">Assessed whether the local data of the target Android app is adequately protected. Decompiled APK, reviewed manifest, extracted data via ADB.</p>
+                    <h4 class="lbl mt-4">My Role</h4>
+                    <p class="txt">Enumerated the target app's main structure, calculated CVSS scores, and authored the complete penetration assessment report.</p>
+                    <h4 class="lbl mt-4">Results: 4 vulnerabilities found</h4>
+                    <ul class="txt list-inside list-disc space-y-1"><li>No root detection</li><li>Plaintext JWT tokens in SharedPreferences</li><li>Unencrypted SQLite database</li><li>allowBackup=true</li></ul>
+                    <ul class="mt-auto flex flex-wrap gap-2 pt-6"><li class="chip">JADX-GUI</li><li class="chip">APKTool</li><li class="chip">Smali</li><li class="chip">ADB</li><li class="chip">DB Browser for SQLite</li></ul>
+                    <div class="mt-5 flex flex-wrap gap-3 border-t border-white/10 pt-5">
+                        <a href="https://docs.google.com/document/d/1pb9j0oUXJONmgvIVA6OcMsI47C15rJHUYbCCY-2NyBQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn !py-2 bg-brand-accent text-white hover:bg-brand-purple"><i class="fas fa-file-lines"></i> Assessment Report</a>
+                    </div>
+                </article>
+                <article class="card flex flex-col">
+                    <p class="text-sm text-brand-accent">AI &amp; Automation | 2026 | Research paper, Team project</p>
+                    <h3 class="mt-1 text-xl font-bold text-white">Android Log Analysis using LLM</h3>
+                    <h4 class="lbl mt-5">Solution Pipeline</h4>
+                    <p class="txt">A pipeline of adaptive buffering, regex parsing with token masking, TF-IDF/SVD/UMAP/DBSCAN clustering, and an LLaMA agent that produces structured summaries.</p>
+                    <h4 class="lbl mt-4">My Role</h4>
+                    <p class="txt">Led the problem brainstorming, shaped the LLM-based analysis solution, and contributed to writing the research paper.</p>
+                    <h4 class="lbl mt-4">Results (~1M Loghub lines)</h4>
+                    <ul class="txt list-inside list-disc space-y-1"><li>BERTScore 0.8387: meaning is preserved.</li><li>ROUGE-L 0.0885: output is abstraction, not copied logs.</li><li>Average 19.93 s per 5,000-line batch.</li></ul>
+                    <ul class="mt-auto flex flex-wrap gap-2 pt-6"><li class="chip">Python</li><li class="chip">LLaMA 3.1 70B</li><li class="chip">Regex</li><li class="chip">TF-IDF</li><li class="chip">BERTScore</li><li class="chip">DeBERTa-v3</li></ul>
+                    <div class="mt-5 flex flex-wrap gap-3 border-t border-white/10 pt-5">
+                        <a href="https://docs.google.com/document/d/1krmHHrr79NYQHDsLD0dIPMYVo51RgRdP/edit?usp=sharing&ouid=111307579494137869444&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn !py-2 bg-brand-accent text-white hover:bg-brand-purple"><i class="fas fa-file-lines"></i> Research Article</a>
+                    </div>
+                </article>
+                <article class="card flex flex-col">
+                    <p class="text-sm text-brand-accent">Web Platform | 2026</p>
+                    <h3 class="mt-1 text-xl font-bold text-white">Blood Connect</h3>
+                    <p class="txt mt-4">Integrated Blood Donation Platform with centralized database. FEFO stock allocation, automated donor eligibility checking.</p>
+                    <h4 class="lbl mt-4">Role</h4>
+                    <p class="txt">System design, web prototype development, and final report documentation.</p>
+                    <div class="gallery mt-5 grid grid-cols-3 gap-3">
+                        <a href="images/dashboard_pasien.png" target="_blank" rel="noopener noreferrer"><img src="images/dashboard_pasien.png" alt="Patient Dashboard View" loading="lazy" class="aspect-video w-full rounded-lg border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/Dashboardadmin.png" target="_blank" rel="noopener noreferrer"><img src="images/Dashboardadmin.png" alt="Admin Dashboard View" loading="lazy" class="aspect-video w-full rounded-lg border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/DashBoardPMIPasien.png" target="_blank" rel="noopener noreferrer"><img src="images/DashBoardPMIPasien.png" alt="PMI Patient Dashboard View" loading="lazy" class="aspect-video w-full rounded-lg border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/DashBoardPMIPendonor.png" target="_blank" rel="noopener noreferrer"><img src="images/DashBoardPMIPendonor.png" alt="PMI Donor Dashboard View" loading="lazy" class="aspect-video w-full rounded-lg border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/DashBoardPMIStokDarah.png" target="_blank" rel="noopener noreferrer"><img src="images/DashBoardPMIStokDarah.png" alt="PMI Blood Stock Dashboard View" loading="lazy" class="aspect-video w-full rounded-lg border border-white/10 object-cover transition hover:opacity-90"></a>
+                    </div>
+                    <ul class="mt-auto flex flex-wrap gap-2 pt-6"><li class="chip">Next.js 15</li><li class="chip">Node.js/TS</li><li class="chip">Express</li><li class="chip">Prisma</li><li class="chip">PostgreSQL</li></ul>
+                    <div class="mt-5 flex flex-wrap gap-3 border-t border-white/10 pt-5">
+                        <a href="https://github.com/Bambang-Saputra/Blood-Connect.git" target="_blank" rel="noopener noreferrer" class="btn !py-2 border border-white/20 text-white hover:border-brand-accent hover:bg-white/5"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://docs.google.com/document/d/1Ns9TRVpnqfO5Ul8k5WwoFbQuRI624vDX/edit?usp=sharing&ouid=111307579494137869444&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn !py-2 bg-brand-accent text-white hover:bg-brand-purple"><i class="fas fa-file-lines"></i> Report</a>
+                    </div>
+                </article>
+                <article class="card flex flex-col">
+                    <p class="text-sm text-brand-accent">UI/UX Design | 2026</p>
+                    <h3 class="mt-1 text-xl font-bold text-white">Grit: UI/UX Fitness App</h3>
+                    <p class="txt mt-4">All-in-One fitness app combining tracking, community, coaching, and event ticketing based on a 32-respondent survey.</p>
+                    <h4 class="lbl mt-4">Role</h4>
+                    <p class="txt">User research, system design, wireframing, and interactive Figma prototyping.</p>
+                    <div class="gallery mt-5 grid grid-cols-3 gap-3">
+                        <a href="images/RunScreen.png" target="_blank" rel="noopener noreferrer"><img src="images/RunScreen.png" alt="Patient Dashboard View" loading="lazy" class="aspect-video w-full rounded-lg border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/SportsScreen.png" target="_blank" rel="noopener noreferrer"><img src="images/SportsScreen.png" alt="Admin Dashboard View" loading="lazy" class="aspect-video w-full rounded-lg border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/HomeScreen.png" target="_blank" rel="noopener noreferrer"><img src="images/HomeScreen.png" alt="PMI Patient Dashboard View" loading="lazy" class="aspect-video w-full rounded-lg border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/DetailEventScreen.png" target="_blank" rel="noopener noreferrer"><img src="images/DetailEventScreen.png" alt="PMI Donor Dashboard View" loading="lazy" class="aspect-video w-full rounded-lg border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/CommunityActivityScreen.png" target="_blank" rel="noopener noreferrer"><img src="images/CommunityActivityScreen.png" alt="PMI Blood Stock Dashboard View" loading="lazy" class="aspect-video w-full rounded-lg border border-white/10 object-cover transition hover:opacity-90"></a>
+                    </div>
+                    <ul class="mt-auto flex flex-wrap gap-2 pt-6"><li class="chip">Figma</li><li class="chip">User Research</li><li class="chip">Prototyping</li></ul>
+                    <div class="mt-5 flex flex-wrap gap-3 border-t border-white/10 pt-5">
+                        <a href="https://www.figma.com/design/gS5UqaJr3JM5virqTbPdw2/Grit-Work-Out---Fitness-Super-App--Copy-?node-id=1-1270&t=xmCWrGdHzTHHZMCb-1" target="_blank" rel="noopener noreferrer" class="btn !py-2 border border-white/20 text-white hover:border-brand-accent hover:bg-white/5"><i class="fab fa-figma"></i> Figma</a>
+                        <a href="https://docs.google.com/document/d/1Gu6XBbalqFHDJ_muoNpaT9UjwlnXtpuT/edit?usp=sharing&ouid=111307579494137869444&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn !py-2 bg-brand-accent text-white hover:bg-brand-purple"><i class="fas fa-file-lines"></i> Report</a>
+                        <a href="https://youtu.be/LHUu9pFWkag" target="_blank" rel="noopener noreferrer" class="btn !py-2 border border-white/20 text-white hover:border-brand-accent hover:bg-white/5"><i class="fab fa-youtube"></i> YouTube Demo</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="sec">
+        <div class="wrap max-w-4xl">
+            <h2 class="h2">Experience &amp; Leadership</h2>
+            <p class="lead">Organizational roles and events I have led.</p>
+            <div class="space-y-10 border-l border-white/20 pl-8">
+                <article class="relative">
+                    <span class="absolute -left-[39px] top-1.5 h-3 w-3 rounded-full bg-brand-accent ring-4 ring-brand-dark"></span>
+                    
+                    
+                    <h3 class="text-xl font-bold text-white">Manager Product & Curriculum Division (PnC) | GDGoC BINUS Malang</h3>
+                    <p class="mb-3 text-sm font-medium text-brand-light">Google Developer Groups on Campus | 2025 - 2026</p>
+                    <ul class="txt list-inside list-disc space-y-1.5"><li>Designed the curriculum and learning roadmap for members.</li><li>Managed chapter events and work programs to match learning goals.</li><li>Took responsibility for activities from planning to delivery.</li></ul>
+                    <div class="gallery mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                        <a href="images/gdgoc01.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/gdgoc01.jpeg" alt="Dokumentasi Manager GDGoC BINUS Malang 1" loading="lazy" class="aspect-[4/3] w-full rounded-xl border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/gdgoc02.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/gdgoc02.jpeg" alt="Dokumentasi Manager GDGoC BINUS Malang 2" loading="lazy" class="aspect-[4/3] w-full rounded-xl border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/gdgoc03.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/gdgoc03.jpeg" alt="Dokumentasi Manager GDGoC BINUS Malang 3" loading="lazy" class="aspect-[4/3] w-full rounded-xl border border-white/10 object-cover transition hover:opacity-90"></a>
+                    </div>
+                </article>
+                <article class="relative">
+                    <span class="absolute -left-[39px] top-1.5 h-3 w-3 rounded-full bg-brand-accent ring-4 ring-brand-dark"></span>
+                    
+                    
+                    <h3 class="text-xl font-bold text-white">Freshmen Partner (FP) Binusian 2029</h3>
+                    <p class="mb-3 text-sm font-medium text-brand-light">BINUS University First Year Program (FYP) B2029 | 2025 - 2026</p>
+                    <ul class="txt list-inside list-disc space-y-1.5"><li>Guided new students through their first year on campus.</li><li>Helped freshmen with academics and adjustment to university life.</li><li>Gave advice and support so they could adjust to university life with confidence.</li></ul>
+                    <div class="gallery mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                        <a href="images/FP01.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/FP01.jpeg" alt="Dokumentasi Freshmen Partner BINUS Malang 1" loading="lazy" class="aspect-[4/3] w-full rounded-xl border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/FP02.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/FP02.jpeg" alt="Dokumentasi Freshmen Partner BINUS Malang 2" loading="lazy" class="aspect-[4/3] w-full rounded-xl border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/FP03.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/FP03.jpeg" alt="Dokumentasi Freshmen Partner BINUS Malang 3" loading="lazy" class="aspect-[4/3] w-full rounded-xl border border-white/10 object-cover transition hover:opacity-90"></a>
+                    </div>
+                </article>
+                <article class="relative">
+                    <span class="absolute -left-[39px] top-1.5 h-3 w-3 rounded-full bg-brand-accent ring-4 ring-brand-dark"></span>
+                    
+                    
+                    <h3 class="text-xl font-bold text-white">Project Leader: Tech Seminar (Study Jam)</h3>
+                    <p class="mb-3 text-sm font-medium text-brand-light">Event: STUDY JAM "LayerUp: Design It, Code It, Ship It" | 2026</p>
+                    <ul class="txt list-inside list-disc space-y-1.5"><li>Led a seminar for 43 participants and managed 10 committee divisions.</li><li>Defined theme/flow (UI/UX -&gt; Figma -&gt; Code -&gt; GitHub).</li><li>Coordinated with Apple Developer Academy Cohort 2026 speakers.</li></ul>
+                    <div class="gallery mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                        <a href="images/studyJam01.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/studyJam01.jpeg" alt="Dokumentasi Project Leader Tech Seminar LayerUp 1" loading="lazy" class="aspect-[4/3] w-full rounded-xl border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/studyJam02.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/studyJam02.jpeg" alt="Dokumentasi Project Leader Tech Seminar LayerUp 2" loading="lazy" class="aspect-[4/3] w-full rounded-xl border border-white/10 object-cover transition hover:opacity-90"></a>
+                        <a href="images/studyJam03.png" target="_blank" rel="noopener noreferrer"><img src="images/studyJam03.png" alt="Dokumentasi Project Leader Tech Seminar LayerUp 2" loading="lazy" class="aspect-[4/3] w-full rounded-xl border border-white/10 object-cover transition hover:opacity-90"></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates -->
+    <section id="certificates" class="sec bg-black/20">
+        <div class="wrap">
+            <h2 class="h2">My Certificates</h2>
+            <p class="lead">Click a certificate to view it in full size.</p>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="card !p-5">
+                    <a href="images/bncc_backend_certi.png" target="_blank" rel="noopener noreferrer"><img src="images/bncc_backend_certi.png" alt="Sertifikat Back-End Development BNCC" class="mb-4 aspect-[4/3] w-full rounded-lg object-cover"></a>
+                    <h4 class="font-semibold text-white">Back-End Development</h4><p class="mt-1 text-xs text-gray-400">BNCC (Bina Nusantara Computer Club)</p>
+                    <p class="mt-1 text-xs text-gray-400">Back-End Development class at Bina Nusantara Computer Club, class of 2024/2025, completed with Distinction.</p>
+                </div>
+                <div class="card !p-5">
+                    <a href="images/cisco_certi.png" target="_blank" rel="noopener noreferrer"><img src="images/cisco_certi.png" alt="Sertifikat Intro to Cybersecurity" class="mb-4 aspect-[4/3] w-full rounded-lg object-cover"></a>
+                    <h4 class="font-semibold text-white">Intro to Cybersecurity</h4><p class="mt-1 text-xs text-gray-400">CISCO Networking Academy</p>
+                    <p class="mt-1 text-xs text-gray-400">Introductory course covering cybersecurity fundamentals, including how to stay safe online, common threats and vulnerabilities, and how organizations defend their networks.</p>
+                </div>
+                <div class="card !p-5">
+                    <a href="images/" target="_blank" rel="noopener noreferrer"><img src="images/" alt="Certificate SMT Indonesia" class="mb-4 aspect-[4/3] w-full rounded-lg object-cover"></a>
+                    <h4 class="font-semibold text-white">Cyber Security Manpower Training (SMT) Program Indonesia</h4><p class="mt-1 text-xs text-gray-400">INKOR 2026</p><p class="mt-1 text-xs text-gray-400">cybersecurity education initiative supported by the Korea Information Security Industry Association (KISIA) and the Korean cybersecurity company NSHC</p>
+                </div>
+                <div class="card !p-5">
+                    <a href="images/english_mooc_certi.png" target="_blank" rel="noopener noreferrer"><img src="images/english_mooc_certi.png" alt="Sertifikat English for Business and Entrepreneurship" class="mb-4 aspect-[4/3] w-full rounded-lg object-cover"></a>
+                    <h4 class="font-semibold text-white">English for Business &amp; Entrepreneurship</h4><p class="mt-1 text-xs text-gray-400">OPEN MOOCs 2026</p>
+                    <p class="mt-1 text-xs text-gray-400">Online course completed through the Online Professional English Network (OPEN), a program sponsored by the U.S. Department of State, covering English for business and entrepreneurship.</p>
+                </div>
+                <div class="card !p-5">
+                    <a href="images/beelingua_profesionalenglish.png" target="_blank" rel="noopener noreferrer"><img src="images/beelingua_profesionalenglish.png" alt="Sertifikat Professional Office" class="mb-4 aspect-[4/3] w-full rounded-lg object-cover"></a>
+                    <h4 class="font-semibold text-white">Professional Office (C1.2)</h4><p class="mt-1 text-xs text-gray-400">Beelingua BINUS</p>
+                </div>
+                <div class="card !p-5">
+                    <a href="images/beelingua_advancedenglish.png" target="_blank" rel="noopener noreferrer"><img src="images/beelingua_advancedenglish.png" alt="Sertifikat Advanced English" class="mb-4 aspect-[4/3] w-full rounded-lg object-cover"></a>
+                    <h4 class="font-semibold text-white">Advanced English (C2.1)</h4><p class="mt-1 text-xs text-gray-400">Beelingua BINUS</p>
+                </div>
+                <div class="card !p-5">
+                    <a href="images/beelingua_marketresearch.png" target="_blank" rel="noopener noreferrer"><img src="images/beelingua_marketresearch.png" alt="Sertifikat Market Research" class="mb-4 aspect-[4/3] w-full rounded-lg object-cover"></a>
+                    <h4 class="font-semibold text-white">Market Research (C2.2)</h4><p class="mt-1 text-xs text-gray-400">Beelingua BINUS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="sec">
+        <div class="wrap max-w-3xl">
+            <div class="card text-center md:!p-12">
+                <h2 class="h2">Let's Connect</h2>
+                <p class="mx-auto mb-8 max-w-md text-gray-400">Let's collaborate and develop something great together.</p>
+                <ul class="mx-auto flex max-w-md flex-col gap-3">
+                    <li><button id="copy-email" type="button" class="bar" aria-label="Copy email address">
+                        <span class="bar-ic"><i class="fas fa-envelope"></i></span>
+                        <span class="min-w-0 flex-1"><span class="block text-xs text-gray-400">Email (click to copy)</span><span class="block truncate font-medium text-white">adriel.hbm@gmail.com</span></span>
+                        <i class="far fa-copy text-gray-400"></i>
+                    </button></li>
+                    <li><a href="files/CV_ADRIELMELIALA2026.pdf" target="_blank" download="CV_Adriel_Meliala.pdf" class="bar">
+                        <span class="bar-ic"><i class="fas fa-file-pdf"></i></span>
+                        <span class="min-w-0 flex-1"><span class="block text-xs text-gray-400">Curriculum Vitae (PDF)</span><span class="block truncate font-medium text-white">Download my CV</span></span>
+                        <i class="fas fa-download text-xs text-gray-400"></i>
+                    </a></li>
+                    <li><a href="https://github.com/adrielmeliala" target="_blank" rel="noopener noreferrer" class="bar">
+                        <span class="bar-ic"><i class="fab fa-github"></i></span>
+                        <span class="min-w-0 flex-1"><span class="block text-xs text-gray-400">GitHub</span><span class="block truncate font-medium text-white">adrielmeliala</span></span>
+                        <i class="fas fa-arrow-up-right-from-square text-xs text-gray-400"></i>
+                    </a></li>
+                    <li><a href="https://www.linkedin.com/in/adriel-meliala-3619b2325/" target="_blank" rel="noopener noreferrer" class="bar">
+                        <span class="bar-ic"><i class="fab fa-linkedin"></i></span>
+                        <span class="min-w-0 flex-1"><span class="block text-xs text-gray-400">LinkedIn</span><span class="block truncate font-medium text-white">Adriel Meliala</span></span>
+                        <i class="fas fa-arrow-up-right-from-square text-xs text-gray-400"></i>
+                    </a></li>
+                    <li><a href="https://www.instagram.com/adrielmeliala/" target="_blank" rel="noopener noreferrer" class="bar">
+                        <span class="bar-ic"><i class="fab fa-instagram"></i></span>
+                        <span class="min-w-0 flex-1"><span class="block text-xs text-gray-400">Instagram</span><span class="block truncate font-medium text-white">@adrielmeliala</span></span>
+                        <i class="fas fa-arrow-up-right-from-square text-xs text-gray-400"></i>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-8 text-center text-sm text-gray-500">
+        <p>&copy; Adriel Hagai Brenta Sembiring Meliala | Portfolio 2026</p>
+    </footer>
+
+    <div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-6 left-1/2 z-[60] -translate-x-1/2 translate-y-4 rounded-full border border-white/15 bg-brand-dark/90 px-5 py-3 text-sm text-white opacity-0 shadow-lg shadow-black/30 backdrop-blur-xl transition duration-300"></div>
+    <script>
+        const email = 'adriel.hbm@gmail.com';
+        const toast = document.getElementById('toast');
+        let timer;
+        function showToast(msg) {
+            toast.textContent = msg;
+            toast.classList.remove('opacity-0', 'translate-y-4');
+            clearTimeout(timer);
+            timer = setTimeout(() => toast.classList.add('opacity-0', 'translate-y-4'), 2500);
+        }
+        document.getElementById('copy-email').addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(email);
+                showToast('Email copied: ' + email);
+            } catch (e) {
+                const ta = document.createElement('textarea');
+                ta.value = email; ta.style.position = 'fixed'; ta.style.opacity = '0';
+                document.body.appendChild(ta); ta.select();
+                let ok = false;
+                try { ok = document.execCommand('copy'); } catch (_) {}
+                ta.remove();
+                showToast(ok ? 'Email copied: ' + email : 'Copy failed. Email: ' + email);
+            }
+        });
+    </script>
+    <!-- Photo carousel (lightbox) -->
+    <div id="lb" class="fixed inset-0 z-[70] hidden items-center justify-center bg-black/90 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Photo viewer">
+        <button id="lb-close" type="button" aria-label="Close" class="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20"><i class="fas fa-xmark"></i></button>
+        <button id="lb-prev" type="button" aria-label="Previous photo" class="absolute left-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20 md:left-6"><i class="fas fa-chevron-left"></i></button>
+        <figure class="flex max-h-full max-w-5xl flex-col items-center">
+            <img id="lb-img" src="" alt="" class="max-h-[78vh] w-auto max-w-full rounded-xl object-contain">
+            <figcaption id="lb-cap" class="mt-4 text-center text-sm text-gray-300"></figcaption>
+        </figure>
+        <button id="lb-next" type="button" aria-label="Next photo" class="absolute right-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20 md:right-6"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <script>
+        (function () {
+            const lb = document.getElementById('lb');
+            const img = document.getElementById('lb-img');
+            const cap = document.getElementById('lb-cap');
+            let items = [], idx = 0, opener = null, startX = 0;
+
+            function render() {
+                const it = items[idx];
+                img.src = it.src;
+                img.alt = it.alt;
+                cap.textContent = it.alt + '  (' + (idx + 1) + ' / ' + items.length + ')';
+                const one = items.length < 2;
+                document.getElementById('lb-prev').classList.toggle('hidden', one);
+                document.getElementById('lb-next').classList.toggle('hidden', one);
+            }
+            function openLb(list, i, trigger) {
+                items = list; idx = i; opener = trigger;
+                render();
+                lb.classList.remove('hidden'); lb.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                document.getElementById('lb-close').focus();
+            }
+            function closeLb() {
+                lb.classList.add('hidden'); lb.classList.remove('flex');
+                document.body.style.overflow = '';
+                img.src = '';
+                if (opener) opener.focus();
+            }
+            function step(d) { idx = (idx + d + items.length) % items.length; render(); }
+
+            document.querySelectorAll('.gallery').forEach(function (g) {
+                const links = Array.from(g.querySelectorAll('a'));
+                const list = links.map(function (a) {
+                    return { src: a.getAttribute('href'), alt: a.querySelector('img').alt };
+                });
+                links.forEach(function (a, i) {
+                    a.addEventListener('click', function (e) { e.preventDefault(); openLb(list, i, a); });
+                });
+            });
+
+            document.getElementById('lb-close').addEventListener('click', closeLb);
+            document.getElementById('lb-prev').addEventListener('click', function () { step(-1); });
+            document.getElementById('lb-next').addEventListener('click', function () { step(1); });
+            lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+            lb.addEventListener('touchstart', function (e) { startX = e.changedTouches[0].clientX; }, { passive: true });
+            lb.addEventListener('touchend', function (e) {
+                const dx = e.changedTouches[0].clientX - startX;
+                if (Math.abs(dx) > 50 && items.length > 1) step(dx < 0 ? 1 : -1);
+            });
+            document.addEventListener('keydown', function (e) {
+                if (lb.classList.contains('hidden')) return;
+                if (e.key === 'Escape') closeLb();
+                if (e.key === 'ArrowLeft' && items.length > 1) step(-1);
+                if (e.key === 'ArrowRight' && items.length > 1) step(1);
+            });
+        })();
+    </script>
+</body>
+</html>
